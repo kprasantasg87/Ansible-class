@@ -4,5 +4,5 @@
   tasks:
     - name: git install
       yum:
-        name: git 
+        name: httpd 
         state: present
