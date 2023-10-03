@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage('git'){
+            steps{
+                git branch: 'main', credentialsId: 'jenkinsansibleroot', url: 'https://github.com/kprasantasg87/Ansible-class.git'
+            }
+        }
+        stage('ansible'){
+            steps{
+                ansiblePlaybook credentialsId: 'ansiblejenkins', installation: 'ansible', inventory: 'inventory', playbook: 'user.yml'
+            }
+        }
+    }
+}
