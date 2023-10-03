@@ -1,6 +1,5 @@
 ---
 - hosts: server
-  become: true
   tasks:
     - name: git install
       yum:
