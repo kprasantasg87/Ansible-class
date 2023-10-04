@@ -7,8 +7,8 @@
         name: httpd 
         state: present
       service:
-          name: httpd
-          state: started
+        name: httpd
+        state: started
       
           
       
