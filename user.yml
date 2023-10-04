@@ -3,9 +3,6 @@
   become: true
   tasks:
     - name: git install
-      yum:
-        name: httpd 
-        state: present
       service:
         name: httpd
         state: started
