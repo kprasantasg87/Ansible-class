@@ -32,12 +32,15 @@
       get_url:
         repo: https://pkg.jenkins.io/redhat-stable/jenkins.repo
         dest: /etc/yum.repos.d/jenkins.repo
+    - name:
       rpm_key:
         key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
         state: present
+    - name: jenkins install
       yum:
         name: jenkins
         state: present
+    - name: jenkins up
       service:
         name: jenkins
         state: started
