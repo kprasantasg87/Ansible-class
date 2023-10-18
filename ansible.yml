@@ -1,0 +1,16 @@
+---
+- hosts: server
+  become: true
+  vars:
+    package_list:
+      - git
+      - pip
+      - python
+      - java-17
+  tasks:
+    - name: installation of packages
+      yum:
+        name: "{{items}}"
+        state: present
+
+      with_items: "{{package_list}}"
