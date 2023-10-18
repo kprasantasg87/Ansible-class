@@ -20,7 +20,7 @@
         state: started
 
     - name: check the installation
-      command: rpm -q git
+      command: git --version
       register: package_status
       ignore_errors: yes
     - name: installation
