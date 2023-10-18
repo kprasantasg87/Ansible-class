@@ -10,7 +10,7 @@
   tasks:
     - name: installation of packages
       yum:
-        name: "{{items}}"
+        name: "{{item}}"
         state: present
 
       with_items: "{{package_list}}"
