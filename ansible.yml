@@ -20,9 +20,11 @@
         state: started
 
     - name: check the installation
+      command: rpm -q httpd
+      register: status
+      ignore_errors: yes
+    - name: installation
       yum:
-        name: httpd
-        command: rpm -q httpd
-        register: status
-        ignore_errors: yes
-      when: status.rc != 0 
+        name: httpd 
+        state: present
+        when: status.rc != 0
