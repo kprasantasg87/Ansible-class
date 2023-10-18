@@ -22,7 +22,7 @@
     
     - name: jenkins installation
       get_url:
-        repo: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
         dest: /etc/yum.repos.d/jenkins.repo
     - name:
       rpm_key:
