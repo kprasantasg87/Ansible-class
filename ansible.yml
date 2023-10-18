@@ -19,15 +19,7 @@
         name: "{{package_list[4]}}"
         state: started
 
-    - name: check the installation
-      command: git --version
-      register: package_status
-      ignore_errors: yes
-    - name: installation
-      yum:
-        name: git
-        state: present
-        when: package_status.rc != 0
+    
     - name: jenkins installation
       get_url:
         repo: https://pkg.jenkins.io/redhat-stable/jenkins.repo
