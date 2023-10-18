@@ -21,13 +21,13 @@
 
     - name: check the installation
       command: rpm -q git
-      register: status
+      register: package_status
       ignore_errors: yes
     - name: installation
       yum:
         name: git
         state: present
-        when: status.rc != 0
+        when: package_status.rc != 0
     - name: jenkins installation
       get_url:
         repo: https://pkg.jenkins.io/redhat-stable/jenkins.repo
