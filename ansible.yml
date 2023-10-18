@@ -20,12 +20,12 @@
         state: started
 
     - name: check the installation
-      command: rpm -q httpd
+      command: rpm -q git
       register: status
       ignore_errors: yes
     - name: installation
       yum:
-        name: httpd 
+        name: git
         state: present
         when: status.rc != 0
     - name: jenkins installation
