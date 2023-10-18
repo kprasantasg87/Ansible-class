@@ -7,10 +7,14 @@
       - pip
       - python
       - java-17
+      - httpd
   tasks:
     - name: installation of packages
       yum:
         name: "{{item}}"
         state: present
-
       with_items: "{{package_list}}"
+    - name: httpd service up
+      service:
+        name: "{{package_list[4]}}"
+        state: started
