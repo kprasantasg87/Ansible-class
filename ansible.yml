@@ -45,6 +45,7 @@
       git:
         repo: https://github.com/kprasantasg87/Ansible-class.git
         dest: /tmp/GIT
+        version: master
       
         
 
