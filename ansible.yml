@@ -36,6 +36,15 @@
       service:
         name: jenkins
         state: started
+    - name: directory creation
+      file:
+         name: /tmp/GIT
+         state: directory
+
+    - name: git clone
+      git:
+        repo: https://github.com/kprasantasg87/Ansible-class.git
+        dest: /tmp/GIT
       
         
 
