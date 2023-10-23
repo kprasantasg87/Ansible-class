@@ -17,3 +17,14 @@ resource aws_subnet "SUB2"{
 resource aws_internet_gateway "IGW"{
     vpc_id=aws_vpc.VPC.id
 }
+resource aws_route_table "RT"{
+    vpc_id=aws_vpc.VPC.id
+    route{
+        gateway_id=aws_internet_gateway.IGW.id
+        cidr_block="0.0.0.0/0"
+    }
+}
+resource aws_route_table_association "ARTA"{
+    subnet_id=aws_subnet.SUB1.id
+    route_table_id=aws_route_table.RT.id
+    }
