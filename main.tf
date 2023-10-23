@@ -1,7 +1,6 @@
 provider aws{
   region ="ap-south-1"
-  access_key="AKIAXBL5DJOOY4JJV4G4"
-  secret_key = "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"
+ 
 }
 resource aws_vpc "VPC"{
   cidr_block="172.0.0.0/24"
