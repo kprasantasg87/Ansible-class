@@ -30,7 +30,7 @@ resource aws_route_table_association "ARTA"{
     }
 resource aws_instance "INST"{
     instance_type ="t2.micro"
-    ami="ami-072ec8f4ea4a6f2cf"
+    ami="ami-099b3d23e336c2e83"
     key_name="ansible-jenkins"
     subnet_id=aws_subnet.SUB1.id
     associate_public_ip_address= true
