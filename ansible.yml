@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+    packages:
+      - git
+      - python
+      - wget
+      - java-17
+      - httpd
+      - docker
+  tasks:
+    - name: isntall package
+      yum:
+        name: "{{item}}"
+        state: present
+      with_items: "{{packages}}"
+    - name: service make up
+      service:
+        name: "{{packages[4]}}"
+        state: started
+    - name: docker up
+      service:
+        name: "{{packages[5]}}"
+        state: started
+    - name: terraform isntall
+      unarchive:
+        src: https://releases.hashicorp.com/terraform/0.9.1/terraform_0.9.1_linux_amd64.zip
+        dest: /usr/bin
+        remote_src: true
+    - name: dir creation
+      file:
+        name: /home/ec2-user/GIT
+        state: directory
+    - name: git clone
+      git:
+        repo: https://github.com/kprasantasg87/Ansible-class.git
+        dest: /home/ec2-user/GIT
+
