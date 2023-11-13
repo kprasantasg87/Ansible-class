@@ -32,8 +32,5 @@
       file:
         name: /home/ec2-user/GIT
         state: directory
-    - name: git clone
-      git:
-        repo: https://github.com/kprasantasg87/Ansible-class.git
-        dest: /home/ec2-user/GIT
+  
 
