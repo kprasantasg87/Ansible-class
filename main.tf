@@ -1,6 +1,6 @@
 provider aws {
-    access_key="AKIAXBL5DJOO6NPRS37M"
-    secret_key="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"
+    access_key="AKIAXBL5DJOOYOWJCRXP"
+    secret_key="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"
 }
 
 
