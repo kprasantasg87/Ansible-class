@@ -1,7 +1,6 @@
 provider aws {
-    region="ap-south-1"
-    access_key="AKIAXBL5DJOOXDFCUVXA"
-    secret_key="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"
+    access_key="AKIAXBL5DJOO6NPRS37M"
+    secret_key="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"
 }
 
 
